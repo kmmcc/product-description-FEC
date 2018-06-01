@@ -34,3 +34,5 @@ const ProductDescription = sequelize.define('productdescription', {
 db.sync()
 
 module.exports.db = db
+module.exports.MasterProductList = MasterProductList
+module.exports.ProductDescription = ProductDescription
