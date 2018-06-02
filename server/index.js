@@ -4,7 +4,7 @@ const helmet = require('helmet')
 const path = require('path')
 const axios = require('axios')
 
-//require db
+require('../database')
 
 const server = express()
 const PORT = 3000
@@ -21,3 +21,28 @@ server.listen(PORT, function(err, success) {
     console.log('Listening on PORT: ', PORT)
   }
 })
+
+//npm install
+
+//nodemon X
+//body-parser X
+//express X
+//helmet X
+//axios X
+
+//npm install sequelize
+//npm install pg 
+
+//react X
+//react dom X
+//babel core X
+//babel-loader X
+//babel-preset-env X
+//babel-preset-react X
+
+//webpack
+//webpack cli
+
+//git checkout branch
+//commit everything
+//send it up via branch

@@ -1,0 +1,39 @@
+{
+  "name": "product-descriptions-FEC",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmmcc/product-description-FEC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmmcc/product-description-FEC/issues"
+  },
+  "homepage": "https://github.com/kmmcc/product-description-FEC#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "nodemon": "^1.17.5",
+    "pg": "^7.4.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "sequelize": "^4.37.10",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1"
+  }
+}
