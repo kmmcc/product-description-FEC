@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-//import App from //TBD
+import App from '../src/components/App.jsx'
 
-ReactDOM.render(<div>Hello Batman.</div>, document.getElementById('App'))
+ReactDOM.render(<App />, document.getElementById('App'))
 

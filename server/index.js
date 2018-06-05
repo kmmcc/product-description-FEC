@@ -4,23 +4,35 @@ const helmet = require('helmet')
 const path = require('path')
 const axios = require('axios')
 
-require('../database')
+const db = require('../database')
 
-const server = express()
+const app = express()
 const PORT = 3000
 
-server.use(express.static(path.join(__dirname, '../client/dist')))
-server.use(bodyParser.json)
-server.use(bodyParser.urlencoded({extended: true}))
-server.use(helmet())
+app.use(express.static(path.join(__dirname, '../client/dist')))
+app.use(helmet())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
-server.listen(PORT, function(err, success) {
+app.listen(PORT, function(err, success) {
   if(err) {
     console.log('Express server connection error!')
   } else {
     console.log('Listening on PORT: ', PORT)
   }
 })
+
+
+app.get('/api/description/:product', function(req, res) {
+  db.ProductDescription.findOne({where: {ProductTitle: req.params.product}})
+    .then(response => {
+      res.send(response)
+    })
+    .catch(err => console.log('err in server DB get', err))
+})
+
+
+
 
 //npm install
 

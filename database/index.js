@@ -1,6 +1,17 @@
 // Or, if you don't want/need a background service you can just run:
 //   pg_ctl -D /usr/local/var/postgres start
 
+// roboto
+// and lato for typefaces
+// gotta scriptsrc for fonts in index
+// put the repo into the organization
+
+//create repo in org
+//kyle module server
+//instructions 2nd one, push from existing repo
+//git remote add whatever name, eg slytherin
+//git push -u slytherin master
+
 const Sequelize = require('sequelize');
 const db = new Sequelize('sequoiaproductdescription', 'kyle', 'kyle', {
   host: 'localhost',
