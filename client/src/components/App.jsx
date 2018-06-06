@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
+const Title = styled.h1`
+  font-family: Lato;
+  font-weight: bold;
+  font-size: 1.0em;
+  text-align: left;
+  color: black;
+`
 
-// roboto
-// and lato for typefaces
-// gotta scriptsrc for fonts in index
+const DescriptionLink = styled.p`
+  font-family: Lato;
+  color: blue;
+  hover: {
+    text-decoration: underline;
+  }
+`
 
+const DescriptionText = styled.p`
+  font-family: Lato;
+
+`
 
 class App extends React.Component {
   constructor(props) {
@@ -53,12 +68,18 @@ class App extends React.Component {
     return (
       <div>
 
-        <div> {this.state.manufacturer} </div>
-        <div> {this.state.producttitle} </div>
+        <DescriptionLink>
+          <div> {this.state.manufacturer} </div>
+        </DescriptionLink>
+        <Title> 
+          <h1> <span> {this.state.producttitle} </span> </h1> 
+        </Title>
         <div> {this.state.ourprice} </div>
         <div> {this.state.stockstatus} </div>
         <div> {this.state.soldby} </div>
-        <div> {this.state.description} </div>
+        <DescriptionText>
+          <div> {this.state.description} </div>
+        </DescriptionText>
         
         <button onClick={ this.fetchProductDescription } > Clicky </button>
 
