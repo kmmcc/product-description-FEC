@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
+
+// roboto
+// and lato for typefaces
+// gotta scriptsrc for fonts in index
+
+
 class App extends React.Component {
   constructor(props) {
     super(props)
