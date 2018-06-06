@@ -11,17 +11,19 @@ const Title = styled.h1`
   color: black;
 `
 
-const DescriptionLink = styled.p`
+const DescriptionLink = styled.span`
   font-family: Lato;
   color: blue;
-  hover: {
+  &:hover {
     text-decoration: underline;
   }
 `
 
-const DescriptionText = styled.p`
+const DescriptionText = styled.span`
   font-family: Lato;
-
+`
+const DescriptionTextBold = DescriptionText.extend`
+  font-weight: bold;
 `
 
 class App extends React.Component {
@@ -31,9 +33,9 @@ class App extends React.Component {
       id: '',
       producttitle: '',
       manufacturer: '',
-      listprice: '',
-      ourprice: '',
-      stockstatus: '',
+      listprice: 0,
+      ourprice: 0,
+      stockstatus: true,
       soldby: '',
       description: '',
       category: ''
@@ -74,7 +76,17 @@ class App extends React.Component {
         <Title> 
           <h1> <span> {this.state.producttitle} </span> </h1> 
         </Title>
-        <div> {this.state.ourprice} </div>
+
+
+        <DescriptionText>
+          <div> Price: {(this.state.ourprice).toFixed(2)} </div>
+            <div> 
+              <DescriptionLink>FREE Shipping </DescriptionLink>on orders over $25 —or get <DescriptionTextBold>FREE Two-Day Shipping </DescriptionTextBold>with <DescriptionLink>Sequoia Prime</DescriptionLink>
+            </div>
+        </DescriptionText>
+
+
+
         <div> {this.state.stockstatus} </div>
         <div> {this.state.soldby} </div>
         <DescriptionText>
