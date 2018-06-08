@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
+import StockStatus from './StockStatus.jsx'
+import InStock from './StockStatus.jsx'
+import OutOfStock from './StockStatus.jsx'
+
 const Title = styled.h1`
   font-family: Lato;
   font-weight: bold;
