@@ -26,6 +26,17 @@ const DescriptionTextBold = DescriptionText.extend`
   font-weight: bold;
 `
 
+//minimum width of whole component is 250 pixels
+//does not appear to be a maximum width
+
+//out of stock
+// Temporarily out of stock. 
+// Order now and we'll deliver when available. 
+// We'll e-mail you with an estimated delivery date as
+//  soon as we have more information. Your account will 
+//  only be charged when we ship the item.
+
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -85,11 +96,11 @@ class App extends React.Component {
             </div>
         </DescriptionText>
 
-
-
         <div> {this.state.stockstatus} </div>
-        <div id='soldby-container'> {this.state.soldby} </div>
+
         <DescriptionText>
+          <div id='soldby-container'> Ships from and sold by {this.state.soldby}. Gift wrap available. </div>
+
           <div id='description-container'> {this.state.description} </div>
         </DescriptionText>
         
