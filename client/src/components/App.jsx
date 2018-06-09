@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
-import StockStatus from './StockStatus.jsx'
-import InStock from './StockStatus.jsx'
-import OutOfStock from './StockStatus.jsx'
+import {StockStatus, InStock, OutOfStock} from './StockStatus.jsx'
 
 const Title = styled.h1`
   font-family: Lato;
@@ -15,7 +13,7 @@ const Title = styled.h1`
   color: black;
 `
 
-const DescriptionLink = styled.span`
+export const DescriptionLink = styled.span`
   font-family: Lato;
   color: blue;
   &:hover {
@@ -26,7 +24,7 @@ const DescriptionLink = styled.span`
 const DescriptionText = styled.span`
   font-family: Lato;
 `
-const DescriptionTextBold = DescriptionText.extend`
+export const DescriptionTextBold = DescriptionText.extend`
   font-weight: bold;
 `
 
@@ -100,7 +98,9 @@ class App extends React.Component {
             </div>
         </DescriptionText>
 
-        <div> {this.state.stockstatus} </div>
+        <DescriptionText>
+          <StockStatus stockStatus={this.state.stockstatus}/>
+        </DescriptionText>
 
         <DescriptionText>
           <div id='soldby-container'> Ships from and sold by {this.state.soldby}. Gift wrap available. </div>

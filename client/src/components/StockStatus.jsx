@@ -2,19 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
-class StockStatus extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  //if props.stockStatus = true
-    //return function InStock
+import {DescriptionTextBold, DescriptionLink} from './App.jsx'
 
-  //if props.stockStatus = false
-    //return function OutOfStock
-  
+export function StockStatus (props) {
+  console.log('props in stockstatus', props)
+  if (props.stockStatus === true) {
+    return <InStock />
+  } else {
+    return <OutOfStock />
+  }
 }
 
-function InStock() {
+export function InStock() {
   let time = new Date(Date.now())
   let hours = time.getHours()
   let minutes = 60 - time.getMinutes()
@@ -58,32 +57,28 @@ function InStock() {
   if (mm === 11) { mm = 'December'}
 
   if (hours === 0 && minutes === 0) {
-    return <div>`Want it ${weekDay + ' ' + mm + ' ' + dd}? Order now and choose Two-Day Shipping at checkout.`</div>
+    return <div>Want it {weekDay + ' ' + mm + ' ' + dd}? Order now and choose Two-Day Shipping at checkout.</div>
   }
   else if (hours === 0) {
-    return <div>`Want it ${weekDay + ' ' + mm + ' ' + dd}? Order within ${minutes} minutes and choose Two-Day Shipping at checkout.`</div>
+    return <div>Want it {weekDay + ' ' + mm + ' ' + dd}? Order within {minutes} minutes and choose Two-Day Shipping at checkout.</div>
   }
   else if (minutes === 0) {
-    return <div>`Want it ${weekDay + ' ' + mm + ' ' + dd}? Order within ${timeTil} hours and choose Two-Day Shipping at checkout.`</div>
+    return <div>Want it {weekDay + ' ' + mm + ' ' + dd}? Order within {timeTil} hours and choose Two-Day Shipping at checkout.</div>
   }
   else if (hours === 1 && minutes === 1) {
-    return <div>`Want it ${weekDay + ' ' + mm + ' ' + dd}? Order within ${timeTil} hour and ${minutes} minute and choose Two-Day Shipping at checkout.`</div>
+    return <div>Want it {weekDay + ' ' + mm + ' ' + dd}? Order within {timeTil} hour and {minutes} minute and choose Two-Day Shipping at checkout.</div>
   }
   else if (hours === 1) {
-    return <div>`Want it ${weekDay + ' ' + mm + ' ' + dd}? Order within ${minutes} minute and choose Two-Day Shipping at checkout.`</div>
+    return <div>Want it {weekDay + ' ' + mm + ' ' + dd}? Order within {minutes} minute and choose Two-Day Shipping at checkout.</div>
   }
   else if (minutes === 1) {
-    return <div>`Want it ${weekDay + ' ' + mm + ' ' + dd}? Order within ${timeTil} hour and choose Two-Day Shipping at checkout.`</div>
+    return <div>Want it {weekDay + ' ' + mm + ' ' + dd}? Order within {timeTil} hour and choose Two-Day Shipping at checkout.</div>
   } 
   else { 
-    return <div>`Want it ${weekDay + ' ' + mm + ' ' + dd}? Order within ${timeTil} hours and ${minutes} minutes and choose Two-Day Shipping at checkout.`</div>
+    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hours and {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping</DescriptionTextBold> at checkout. <DescriptionLink>Details</DescriptionLink> </div>
   }
 }
 
-function OutOfStock() {
-
+export function OutOfStock() {
+  return 'Temporarily out of stock. Order now and we\'ll deliver when available. We\'ll e-mail you with an estimated delivery date as soon as we have more information. Your account will only be charged when we ship the item.'
 }
-
-export default StockStatus
-export default InStock
-export default OutOfStock
