@@ -24,11 +24,11 @@ const Title = styled.h1`
 `
 
 const DescriptionText = styled.span`
+  color: #111;
   font-family: Lato;
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
-  color: #111;
 `
 
 export const DescriptionLink = DescriptionText.extend`
@@ -65,6 +65,18 @@ export const OutOfStockText = DescriptionText.extend`
   font-size: 1.25em;
   color: orange;
 `
+
+const LineBreak = styled.hr`
+  background-color: transparent;
+  display: block;
+  height: 1px;
+  border-width: 0;
+  border-top: 1px solid #e7e7e7;
+  line-height: 19px;
+  margin-top: 0;
+  margin-bottom: 14px;
+`
+
 
 //minimum width of whole component is 250 pixels
 //does not appear to be a maximum width
@@ -127,6 +139,7 @@ class App extends React.Component {
         <Title> 
           <span id='title-container'> {this.state.producttitle} </span>
         </Title>
+        <LineBreak />
 
 
           <div id='price-container'> <DescriptionText> Price: </DescriptionText> <RedPrice> ${(this.state.ourprice).toFixed(2)} </RedPrice> </div>
