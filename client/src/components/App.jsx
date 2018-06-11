@@ -11,11 +11,16 @@ const WidthWrapper = styled.div`
 
 const Title = styled.h1`
   font-family: Lato;
-  font-weight: 700;
-  font-size: 14px;
   text-align: left;
+  font-size: 21px;
+  font-weight: 700;
   color: black;
   color: rgb(17, 17, 17);
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 `
 
 const DescriptionText = styled.span`
@@ -76,7 +81,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: '',
+      id: 0,
       producttitle: '',
       manufacturer: '',
       listprice: 0,
@@ -120,11 +125,11 @@ class App extends React.Component {
           <div id='manufacturer-container'> {this.state.manufacturer} </div>
         </DescriptionLink>
         <Title> 
-          <h1> <span id='title-container'> {this.state.producttitle} </span> </h1> 
+          <span id='title-container'> {this.state.producttitle} </span>
         </Title>
 
 
-          <div id='price-container'> Price: <RedPrice> {(this.state.ourprice).toFixed(2)} </RedPrice> </div>
+          <div id='price-container'> <DescriptionText> Price: </DescriptionText> <RedPrice> ${(this.state.ourprice).toFixed(2)} </RedPrice> </div>
             <div>
               <ShippingDescriptionText>
                 <DescriptionLink>FREE Shipping </DescriptionLink>on orders over $25 —or get <DescriptionTextBold>FREE Two-Day Shipping </DescriptionTextBold>with <DescriptionLink>Sequoia Prime</DescriptionLink>
