@@ -5,12 +5,17 @@ import styled from 'styled-components'
 
 import {StockStatus, InStock} from './StockStatus.jsx'
 
+const WidthWrapper = styled.div`
+  min-width: 250px;
+`
+
 const Title = styled.h1`
   font-family: Lato;
-  font-weight: bold;
-  font-size: 1.0em;
+  font-weight: 700;
+  font-size: 14px;
   text-align: left;
   color: black;
+  color: rgb(17, 17, 17);
 `
 
 export const DescriptionLink = styled.span`
@@ -23,6 +28,10 @@ export const DescriptionLink = styled.span`
 
 const DescriptionText = styled.span`
   font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #111;
 `
 export const DescriptionTextBold = DescriptionText.extend`
   font-weight: bold;
@@ -86,7 +95,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <div id='parent-container'>
+      <WidthWrapper id='parent-container'>
 
         <DescriptionLink>
           <div id='manufacturer-container'> {this.state.manufacturer} </div>
@@ -115,7 +124,7 @@ class App extends React.Component {
         
         <button onClick={ this.fetchProductDescription } > Clicky </button>
 
-      </div>
+      </WidthWrapper>
     )
   }
 

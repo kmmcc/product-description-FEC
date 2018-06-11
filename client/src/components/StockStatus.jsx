@@ -18,18 +18,23 @@ export function InStock() {
   let hours = time.getHours()
   let minutes = 60 - time.getMinutes()
 
+  if (minutes === 60) {
+    minutes = 0
+    hours = hours + 1
+  }
+
   let date = new Date();
   let dd = date.getDate() + 2;
   let weekDay = date.getDay() + 2;
   let mm = date.getMonth();
 
-  if (hours => 12) {
+  if (hours >= 12) {
     hours = hours - 12
     dd = dd + 1
     weekDay = weekDay + 1
   }
 
-  let timeTil = 24 - hours
+  let timeTil = 14 - hours
 
   if (weekDay > 6) {
     weekDay = weekDay - 7
