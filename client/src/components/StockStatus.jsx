@@ -16,6 +16,7 @@ export function StockStatus (props) {
 export function InStock() {
   let time = new Date(Date.now())
   let hours = time.getHours()
+  console.log('hours', hours)
   let minutes = 60 - time.getMinutes()
 
   if (minutes === 60) {
@@ -28,13 +29,14 @@ export function InStock() {
   let weekDay = date.getDay() + 2;
   let mm = date.getMonth();
 
-  if (hours >= 12) {
+  if (hours > 12) {
     hours = hours - 12
     dd = dd + 1
     weekDay = weekDay + 1
   }
 
-  let timeTil = 14 - hours
+  let timeTil = 13 - hours
+  console.log('timetil', timeTil)
 
   if (weekDay > 6) {
     weekDay = weekDay - 7
@@ -74,7 +76,7 @@ export function InStock() {
     return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and {minutes} minute and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
   }
   else if (hours === 1) {
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {minutes} minute and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
+    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
   }
   else if (minutes === 1) {
     return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>

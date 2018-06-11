@@ -33,6 +33,13 @@ const DescriptionText = styled.span`
   line-height: 19px;
   color: #111;
 `
+
+const RedPrice = DescriptionText.extend`
+  color: #B12704;
+  font-size: 17px;
+  line-height: 1.255;
+`
+
 export const DescriptionTextBold = DescriptionText.extend`
   font-weight: bold;
 `
@@ -106,7 +113,7 @@ class App extends React.Component {
 
 
         <DescriptionText>
-          <div id='price-container'> Price: {(this.state.ourprice).toFixed(2)} </div>
+          <div id='price-container'> Price: <RedPrice> {(this.state.ourprice).toFixed(2)} </RedPrice> </div>
             <div> 
               <DescriptionLink>FREE Shipping </DescriptionLink>on orders over $25 —or get <DescriptionTextBold>FREE Two-Day Shipping </DescriptionTextBold>with <DescriptionLink>Sequoia Prime</DescriptionLink>
             </div>
