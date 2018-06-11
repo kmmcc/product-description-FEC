@@ -18,14 +18,6 @@ const Title = styled.h1`
   color: rgb(17, 17, 17);
 `
 
-export const DescriptionLink = styled.span`
-  font-family: Lato;
-  color: blue;
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
 const DescriptionText = styled.span`
   font-family: Lato;
   font-size: 14px;
@@ -34,10 +26,26 @@ const DescriptionText = styled.span`
   color: #111;
 `
 
+export const DescriptionLink = DescriptionText.extend`
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
 const RedPrice = DescriptionText.extend`
   color: #B12704;
   font-size: 17px;
   line-height: 1.255;
+`
+
+const ShippingDescriptionText = styled.div`
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #111;
+  margin-left: 42px;
 `
 
 export const InStockText = RedPrice.extend`
@@ -116,12 +124,12 @@ class App extends React.Component {
         </Title>
 
 
-        <DescriptionText>
           <div id='price-container'> Price: <RedPrice> {(this.state.ourprice).toFixed(2)} </RedPrice> </div>
-            <div> 
-              <DescriptionLink>FREE Shipping </DescriptionLink>on orders over $25 —or get <DescriptionTextBold>FREE Two-Day Shipping </DescriptionTextBold>with <DescriptionLink>Sequoia Prime</DescriptionLink>
+            <div>
+              <ShippingDescriptionText>
+                <DescriptionLink>FREE Shipping </DescriptionLink>on orders over $25 —or get <DescriptionTextBold>FREE Two-Day Shipping </DescriptionTextBold>with <DescriptionLink>Sequoia Prime</DescriptionLink>
+              </ShippingDescriptionText>
             </div>
-        </DescriptionText>
 
         <DescriptionText>
           <StockStatus stockStatus={this.state.stockstatus}/>
