@@ -40,6 +40,10 @@ const RedPrice = DescriptionText.extend`
   line-height: 1.255;
 `
 
+export const InStockText = RedPrice.extend`
+  color: #008a00
+`
+
 export const DescriptionTextBold = DescriptionText.extend`
   font-weight: bold;
 `

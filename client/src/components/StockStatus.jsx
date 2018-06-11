@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
-import {DescriptionTextBold, DescriptionLink, OutOfStockText} from './App.jsx'
+import {DescriptionTextBold, DescriptionLink, OutOfStockText, InStockText} from './App.jsx'
 
 export function StockStatus (props) {
   console.log('props in stockstatus', props)
@@ -64,25 +64,25 @@ export function InStock() {
   if (mm === 11) { mm = 'December'}
 
   if (hours === 0 && minutes === 0) {
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order now and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout.</div>
+    return <div> <div> <InStockText>In Stock.</InStockText> </div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order now and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout.</div>
   }
   else if (hours === 0) {
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
+    return <div> <div> <InStockText>In Stock.</InStockText> </div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
   }
   else if (minutes === 0) {
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hours and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
+    return <div> <div> <InStockText>In Stock.</InStockText> </div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hours and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
   }
   else if (hours === 1 && minutes === 1) {
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and {minutes} minute and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
+    return <div> <div> <InStockText>In Stock.</InStockText> </div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and {minutes} minute and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
   }
   else if (hours === 1) {
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
+    return <div> <div> <InStockText>In Stock.</InStockText> </div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
   }
   else if (minutes === 1) {
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
+    return <div> <div> <InStockText>In Stock.</InStockText> </div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hour and choose <DescriptionTextBold>Two-Day Shipping </DescriptionTextBold>at checkout. <DescriptionLink>Details</DescriptionLink></div>
   } 
   else { 
-    return <div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hours and {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping</DescriptionTextBold> at checkout. <DescriptionLink>Details</DescriptionLink> </div>
+    return <div> <div> <InStockText>In Stock.</InStockText> </div> <DescriptionTextBold> Want it {weekDay + ' ' + mm + ' ' + dd}? </DescriptionTextBold> Order within {timeTil} hours and {minutes} minutes and choose <DescriptionTextBold>Two-Day Shipping</DescriptionTextBold> at checkout. <DescriptionLink>Details</DescriptionLink> </div>
   }
 }
 
