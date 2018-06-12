@@ -23,7 +23,7 @@ app.listen(PORT, function(err, success) {
 })
 
 
-app.get('/api/description/:product', function(req, res) {
+app.get('/api/description/name/:product', function(req, res) {
   db.ProductDescription.findOne({where: {ProductTitle: req.params.product}})
     .then(response => {
       res.send(response)
