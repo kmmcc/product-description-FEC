@@ -7,7 +7,7 @@ const axios = require('axios')
 const db = require('../database')
 
 const app = express()
-const PORT = 3000
+const PORT = 2112
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
 app.use(helmet())
