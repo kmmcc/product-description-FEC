@@ -28,8 +28,17 @@ app.get('/api/description/name/:product', function(req, res) {
     .then(response => {
       res.send(response)
     })
-    .catch(err => console.log('err in server DB get', err))
+    .catch(err => console.log('err in server name get', err))
 })
+
+app.get('/api/description/id/:id', function(req, res) {
+  db.ProductDescription.findOne({where: {id: req.params.id}})
+    .then(response => {
+      res.send(response)
+    })
+    .catch(err => console.log('err in server ID get', err))
+})
+
 
 app.put('/api/description/:product', function(req, res) {
   db.ProductDescription.update(

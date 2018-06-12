@@ -126,7 +126,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    let testValue = 'Regency Edition Leather Loveseat'
+    let testValue = 1
     this.checkProductInput(testValue)
   }
 
