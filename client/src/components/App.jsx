@@ -202,12 +202,4 @@ class App extends React.Component {
 
 }
 
-//GET /api/description/:PRODUCTNAME
-//add a PUT route - e.g. if sellers want to update descriptions, not necessary on front end tho
-
-//onComponentDidMount - fetch data
-//axios call to the server
-//server connects to the DB
-
-
 export default App
