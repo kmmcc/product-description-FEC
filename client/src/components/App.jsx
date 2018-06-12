@@ -114,7 +114,7 @@ class App extends React.Component {
 
   fetchProductDescription (product) {
     let context = this
-    axios.get('/api/description/PREMIUM%20HIGH%20QUALITY%20Plastic%20Fern,%20Green')
+    axios.get('/api/description/Regency%20Edition%20Leather%20Loveseat')
       .then(function (response) {
         console.log('RESPONSE FROM AXIOS GET FRONT END: ', response.data)
         let itemInfo = response.data
