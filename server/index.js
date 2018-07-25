@@ -22,7 +22,6 @@ app.listen(PORT, function(err, success) {
   }
 })
 
-
 app.get('/api/description/name/:product', function(req, res) {
   db.ProductDescription.findOne({where: {ProductTitle: req.params.product}})
     .then(response => {
@@ -39,7 +38,6 @@ app.get('/api/description/id/:id', function(req, res) {
     .catch(err => console.log('err in server ID get', err))
 })
 
-
 app.put('/api/description/:product', function(req, res) {
   db.ProductDescription.update(
     {
@@ -53,7 +51,3 @@ app.put('/api/description/:product', function(req, res) {
     }
   )
 })
-
-//https://www.amazon.com/morning-stoneware-co-workers-microwave-dishwasher/dp/B075W9NNK9/ref=sr_1_2_sspa?s=kitchen&ie=UTF8&qid=1528417867&sr=1-2-spons&keywords=mug&psc=1
-//https://www.amazon.com/Bose-QuietComfort-Wireless-Headphones-Cancelling/dp/B0756CYWWD/ref=pd_sim_23_5?_encoding=UTF8&pd_rd_i=B0756CYWWD&pd_rd_r=VVZKBB33HHC9Q6BGCXK3&pd_rd_w=fQ32G&pd_rd_wg=EjFsZ&psc=1&refRID=VVZKBB33HHC9Q6BGCXK3
-//https://www.amazon.com/Come-Away-Esg/dp/B005K2L4XK/ref=sr_1_3_twi_aud_1?ie=UTF8&qid=1528418464&sr=8-3&keywords=esg

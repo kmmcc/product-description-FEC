@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import {DescriptionTextBold, DescriptionLink, OutOfStockText, InStockText} from './App.jsx'
 
 export function StockStatus (props) {
-  console.log('props in stockstatus', props)
   if (props.stockStatus === true) {
     return <InStock />
   } else {
@@ -18,10 +17,8 @@ export function InStock() {
   let dd = date.getDate() + 2;
   let weekDay = date.getDay() + 2;
   let mm = date.getMonth();
-    //edge case
 
   let hours = date.getHours()
-  console.log('1st hours', hours)
   let minutes = 60 - date.getMinutes()
 
   if (minutes === 60) {

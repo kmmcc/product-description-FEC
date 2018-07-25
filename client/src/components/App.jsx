@@ -145,7 +145,6 @@ class App extends React.Component {
     let context = this
     axios.get(endpoint + product)
       .then(function (response) {
-        console.log('RESPONSE FROM AXIOS GET FRONT END: ', response.data)
         let itemInfo = response.data
         context.setState({
           id: itemInfo.id,
@@ -167,7 +166,6 @@ class App extends React.Component {
   render () {
     return (
       <WidthWrapper id='parent-container'>
-
         <DescriptionLink>
           <div id='manufacturer-container'> {this.state.manufacturer} </div>
         </DescriptionLink>
@@ -175,19 +173,15 @@ class App extends React.Component {
           <span id='title-container'> {this.state.producttitle} </span>
         </Title>
         <LineBreak />
-
-
           <div id='price-container'> <DescriptionText> Price: </DescriptionText> <RedPrice> ${(this.state.ourprice).toFixed(2)} </RedPrice> <span>   <Check><i class="fas fa-check"></i></Check></span><PrimeText>prime</PrimeText> </div>
             <div>
               <ShippingDescriptionText>
                 <DescriptionLink>FREE Shipping </DescriptionLink>on orders over $25 —or get <DescriptionTextBold>FREE Two-Day Shipping </DescriptionTextBold>with <DescriptionLink>Sequoia Prime</DescriptionLink>
               </ShippingDescriptionText>
             </div>
-
         <DescriptionText>
           <StockStatus stockStatus={this.state.stockstatus}/>
         </DescriptionText>
-
         <MarginTopDescriptionText>
           <div id='soldby-container'> Ships from and sold by {this.state.soldby}. Gift wrap available. </div>
         </MarginTopDescriptionText>
@@ -195,11 +189,9 @@ class App extends React.Component {
           <div id='description-container'> {this.state.description} </div>
         </DescriptionTextBox>
         <LineBreak />
-
       </WidthWrapper>
     )
   }
-
 }
 
 export default App
