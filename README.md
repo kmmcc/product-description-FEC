@@ -1,6 +1,6 @@
-#Sequoia Product Description
+# Sequoia Product Description
 
-######An e-commerce product page, styled after Amazon.com
+######A n e-commerce product page, styled after Amazon.com
 
 - Created description section, which displays product information stored in a relational database
 - Replicated Amazon.com CSS
